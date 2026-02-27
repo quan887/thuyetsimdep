@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - THUYẾT SIM VIP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav class="navbar scrolled"> <!-- Always scrolled on subpages -->
+        <div class="nav-container">
+            <a href="index.html" class="logo">Thuyết Sim VIP</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="gioi-thieu.html" class="active">Giới Thiệu</a></li>
+                <li><a href="index.html#danh-sach">Bộ Sưu Tập</a></li>
+                <li><a href="phong-thuy.html">Sim Phong Thủy</a></li>
+                <li><a href="lien-he.html">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="inner-header">
+        <div class="container">
+            <span>Our Journey</span>
+            <h1>Câu Chuyện Thương Hiệu</h1>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="brand_story.png" alt="Luxury Brand Story">
+                </div>
+                <div class="content-text">
+                    <h3>Khát Vọng Vươn Tầm</h3>
+                    <p>Thuyết Sim VIP không chỉ là một đơn vị kinh doanh sim số. Chúng tôi là những người am hiểu giá
+                        trị của sự kết nối và sức mạnh của thương hiệu cá nhân.</p>
+                    <p>Được thành lập bởi Trần Minh Thuyết, chúng tôi đã đồng hành cùng hàng ngàn doanh nhân, chính
+                        khách và những người thành đạt trong việc tìm kiếm "con số định mệnh" giúp khẳng định vị thế và
+                        thu hút tài lộc.</p>
+                    <p>Mỗi tấm sim tại Thuyết Sim VIP đều được tuyển chọn kỹ lưỡng, đảm bảo tính duy nhất, sự sang trọng
+                        và giá trị phong thủy nguyên bản.</p>
+                </div>
+            </div>
+
+            <div class="content-block reverse">
+                <div class="content-text">
+                    <h3>Triết Lý Kinh Doanh</h3>
+                    <p>Chúng tôi lấy "Uy Tín làm Gốc, Khách Hàng làm Tâm". Tại Thuyết Sim VIP, mỗi giao dịch không chỉ
+                        là mua bán, mà là sự trao gửi niềm tin và kiến tạo một mối quan hệ bền vững.</p>
+                    <p>Dịch vụ tư vấn chuyên nghiệp, hỗ trợ tận tình 24/7 và cam kết bảo mật thông tin tuyệt đối chính
+                        là điều giúp chúng tôi luôn đứng vững trên thị trường sim số đầy cạnh tranh.</p>
+                </div>
+                <div class="content-image">
+                    <img src="contact.png" alt="Luxury Service">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>THUYẾT SIM VIP</h3>
+                    <p>Đơn vị cung cấp sim số đẹp phong thủy hàng đầu Việt Nam.</p>
+                    <div class="contact-pill"><i class="fas fa-user"></i> Trần Minh Thuyết</div>
+                    <div class="contact-pill"><i class="fas fa-phone-alt"></i> 05.2332.1999</div>
+                </div>
+                <div class="footer-links">
+                    <h4>Về Chúng Tôi</h4>
+                    <ul>
+                        <li><a href="gioi-thieu.html">Câu Chuyện Thương Hiệu</a></li>
+                        <li><a href="phong-thuy.html">Ý Nghĩa Các Con Số</a></li>
+                        <li><a href="lien-he.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Sản Phẩm</h4>
+                    <ul>
+                        <li><a href="index.html#danh-sach">Sim VIP Đẳng Cấp</a></li>
+                        <li><a href="#">Sim Tài Lộc</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Kết Nối</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Zalo Chat</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Thuyết Sim VIP. Design with elegance and prestige.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.content-block').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

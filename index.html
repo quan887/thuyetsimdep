@@ -7,701 +7,231 @@
     <title>THUYẾT SIM VIP - Đẳng Cấp Sim Số Đẹp</title>
     <meta name="description"
         content="Hệ thống cung cấp Sim Số Đẹp, Sim VIP, Sim Phong Thủy hàng đầu Việt Nam. Trần Minh Thuyết - Nâng tầm đẳng cấp của bạn.">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap"
         rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --gold: #d4af37;
-            --gold-light: #f9e29b;
-            --gold-dark: #aa8c2c;
-            --bg: #050505;
-            --card-bg: rgba(26, 29, 33, 0.7);
-            --text: #ffffff;
-            --text-muted: #b0b0b0;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --glow: 0 0 20px rgba(212, 175, 55, 0.3);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            width: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-            background: url('./luxury_sim_hero_1772117543946.png') center/cover no-repeat;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 0%, var(--bg) 95%);
-            z-index: 1;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 20px;
-            max-width: 900px;
-        }
-
-        .hero-label {
-            display: inline-block;
-            padding: 8px 20px;
-            background: var(--gold);
-            color: #000;
-            font-weight: 700;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
-            animation: fadeInDown 1s ease;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(to bottom, #fff, var(--gold), var(--gold-dark));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-transform: uppercase;
-            animation: fadeInUp 1.2s ease;
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            animation: fadeInUp 1.4s ease;
-        }
-
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            animation: fadeInUp 1.6s ease;
-        }
-
-        /* Buttons */
-        .btn {
-            padding: 18px 40px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: #000;
-            box-shadow: var(--glow);
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: var(--gold);
-            color: #000;
-            transform: translateY(-5px);
-        }
-
-        /* Sections Styling */
-        .section {
-            padding: 100px 20px;
-            position: relative;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, var(--gold), #fff, var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        /* Sim Cards */
-        .sim-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .sim-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sim-card:hover {
-            transform: translateY(-15px);
-            border-color: var(--gold);
-            background: rgba(212, 175, 55, 0.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-        }
-
-        .sim-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .sim-card:hover::before {
-            opacity: 1;
-        }
-
-        .sim-tag {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .sim-icon {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--gold);
-        }
-
-        .sim-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 20px;
-            letter-spacing: 1.5px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .sim-price {
-            font-size: 1.2rem;
-            color: var(--gold);
-            font-weight: 700;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 10px 20px;
-            border-radius: 50px;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .sim-card:hover .sim-price {
-            background: var(--gold);
-            color: #000;
-        }
-
-        /* VIP Section Special */
-        .vip-section {
-            background: linear-gradient(180deg, var(--bg) 0%, #0a0a0a 50%, var(--bg) 100%);
-        }
-
-        .vip-card {
-            background: linear-gradient(135deg, #1a1d21 0%, #050505 100%);
-            border: 1px solid var(--gold);
-        }
-
-        .vip-card .sim-number {
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-        }
-
-        /* Floating Action Buttons */
-        .fab-container {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .fab {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.8rem;
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .fab:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .fab-zalo {
-            background: #0068ff;
-        }
-
-        .fab-phone {
-            background: var(--gold);
-            color: #000;
-        }
-
-        .fab-fb {
-            background: #1877f2;
-        }
-
-        .fab::after {
-            content: attr(data-label);
-            position: absolute;
-            right: 80px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 5px 15px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: var(--transition);
-        }
-
-        .fab:hover::after {
-            opacity: 1;
-            right: 75px;
-        }
-
-        /* Footer */
-        footer {
-            padding: 100px 20px 40px;
-            background: #000;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-brand h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .footer-brand p {
-            color: var(--text-muted);
-            max-width: 400px;
-        }
-
-        .footer-links h4 {
-            color: #fff;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 15px;
-        }
-
-        .footer-links ul li a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links ul li a:hover {
-            color: var(--gold);
-            padding-left: 10px;
-        }
-
-        .contact-info {
-            margin-top: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            color: var(--text-muted);
-        }
-
-        .contact-item i {
-            color: var(--gold);
-            font-size: 1.2rem;
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 991px) {
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .sim-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-    <!-- Floating Actions -->
-    <div class="fab-container">
-        <a href="https://www.facebook.com/share/1CyMuSinCf/?mibextid=wwXlfr" target="_blank" class="fab fab-fb"
-            data-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://zalo.me/0777311999" target="_blank" class="fab fab-zalo" data-label="Zalo Chat">
-            <i class="fas fa-comment"></i>
-        </a>
-        <a href="tel:0523321999" class="fab fab-phone" data-label="Gọi Ngay">
-            <i class="fas fa-phone"></i>
-        </a>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Thuyết Sim VIP</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Trang Chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+                <li><a href="index.html#danh-sach">Bộ Sưu Tập</a></li>
+                <li><a href="phong-thuy.html">Sim Phong Thủy</a></li>
+                <li><a href="lien-he.html">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-overlay"></div>
+        <!-- Note: User can replace with a real video background if available -->
         <div class="hero-content">
-            <span class="hero-label">Hệ Thống Sim Số VIP</span>
-            <h1>Khẳng Định Vị Thế<br>Từ Số Điện Thoại</h1>
-            <p>Trần Minh Thuyết - Chuyên cung cấp sim số đẹp phong thủy, sim VIP đẳng cấp hàng đầu Việt Nam.</p>
-            <div class="hero-btns">
-                <a href="#danh-sach" class="btn btn-gold">
-                    <i class="fas fa-gem"></i> Xem Danh Sách
+            <span class="badge">Elegance & Prestige</span>
+            <h1>Khẳng Định Vị Thế<br>Của Bậc Đế Vương</h1>
+            <p>Trần Minh Thuyết mang đến những con số không chỉ để liên lạc, mà là biểu tượng của sự thành đạt, tài lộc
+                và quyền uy tuyệt đối.</p>
+            <div class="btn-group">
+                <a href="#danh-sach" class="btn-premium btn-primary">
+                    <i class="fas fa-gem"></i> Khám Phá Ngay
                 </a>
-                <a href="https://zalo.me/0777311999" target="_blank" class="btn btn-outline">
+                <a href="https://zalo.me/0777311999" target="_blank" class="btn-premium btn-secondary">
                     <i class="fas fa-comment"></i> Tư Vấn VIP
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- VIP Highlights -->
-    <section class="section vip-section" id="danh-sach">
+    <!-- VIP Collection -->
+    <section class="section-padding" id="danh-sach">
         <div class="container">
-            <div class="section-header">
-                <h2>BỘ SƯU TẬP SIM VIP</h2>
-                <p>Những con số mang lại may mắn, tài lộc và quyền uy cho chủ nhân.</p>
+            <div class="section-title">
+                <span>The Masterpiece</span>
+                <h2>BỘ SƯU TẬP SIM ĐẾ VƯƠNG</h2>
             </div>
 
             <div class="sim-grid">
-                <!-- VIP - Simulated examples -->
-                <div class="sim-card vip-card">
-                    <div class="sim-tag">Cực Phẩm</div>
-                    <div class="sim-icon"><i class="fas fa-crown"></i></div>
-                    <div class="sim-number">0783.239.699</div>
-                    <div class="sim-price">1.200.000đ</div>
+                <!-- VIP Items -->
+                <div class="sim-item">
+                    <span class="item-tag">Cực Phẩm</span>
+                    <div class="item-icon"><i class="fas fa-crown"></i></div>
+                    <div class="item-number">0783.239.699</div>
+                    <div class="item-price">1.200.000đ</div>
                 </div>
-                <div class="sim-card vip-card">
-                    <div class="sim-tag">Phát Tài</div>
-                    <div class="sim-icon"><i class="fas fa-star"></i></div>
-                    <div class="sim-number">0933.278.929</div>
-                    <div class="sim-price">1.200.000đ</div>
+                <div class="sim-item">
+                    <span class="item-tag">Phát Tài</span>
+                    <div class="item-icon"><i class="fas fa-star"></i></div>
+                    <div class="item-number">0933.278.929</div>
+                    <div class="item-price">1.200.000đ</div>
                 </div>
-                <div class="sim-card vip-card">
-                    <div class="sim-tag">Đỉnh Cao</div>
-                    <div class="sim-icon"><i class="fas fa-bolt"></i></div>
-                    <div class="sim-number">0799.968.599</div>
-                    <div class="sim-price">1.200.000đ</div>
+                <div class="sim-item">
+                    <span class="item-tag">Đỉnh Cao</span>
+                    <div class="item-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="item-number">0799.968.599</div>
+                    <div class="item-price">1.200.000đ</div>
                 </div>
-                <div class="sim-card vip-card">
-                    <div class="sim-tag">Tài Lộc</div>
-                    <div class="sim-icon"><i class="fas fa-coins"></i></div>
-                    <div class="sim-number">0937.826.929</div>
-                    <div class="sim-price">1.200.000đ</div>
+                <div class="sim-item">
+                    <span class="item-tag">Tài Lộc</span>
+                    <div class="item-icon"><i class="fas fa-coins"></i></div>
+                    <div class="item-number">0937.826.929</div>
+                    <div class="item-price">1.200.000đ</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sim Đồng Giá Sections -->
-    <section class="section">
+    <!-- Mid Range -->
+    <section class="section-padding" style="background: rgba(255,255,255,0.01);">
         <div class="container">
-            <div class="section-header">
-                <h2>SIM ĐỒNG GIÁ 500K</h2>
-                <p>Khởi đầu thuận lợi với mức giá ưu đãi.</p>
+            <div class="section-title">
+                <span>Premium Selection</span>
+                <h2>SIM PHONG THỦY 800K</h2>
             </div>
             <div class="sim-grid">
-                <div class="sim-card">
-                    <div class="sim-number">0933.975.066</div>
-                    <div class="sim-price">500.000đ</div>
+                <div class="sim-item">
+                    <div class="item-number">0931.289.488</div>
+                    <div class="item-price">800.000đ</div>
                 </div>
-                <div class="sim-card">
-                    <div class="sim-number">0933.985.066</div>
-                    <div class="sim-price">500.000đ</div>
+                <div class="sim-item">
+                    <div class="item-number">0931.293.488</div>
+                    <div class="item-price">800.000đ</div>
                 </div>
-                <div class="sim-card">
-                    <div class="sim-number">0933.081.566</div>
-                    <div class="sim-price">500.000đ</div>
+                <div class="sim-item">
+                    <div class="item-number">0931.539.488</div>
+                    <div class="item-price">800.000đ</div>
                 </div>
-                <div class="sim-card">
-                    <div class="sim-number">0937.712.066</div>
-                    <div class="sim-price">500.000đ</div>
-                </div>
-                <div class="sim-card">
-                    <div class="sim-number">0901.672.066</div>
-                    <div class="sim-price">500.000đ</div>
-                </div>
-                <div class="sim-card">
-                    <div class="sim-number">0908.709.066</div>
-                    <div class="sim-price">500.000đ</div>
-                </div>
-                <div class="sim-card">
-                    <div class="sim-number">0937.725.066</div>
-                    <div class="sim-price">500.000đ</div>
-                </div>
-                <div class="sim-card">
-                    <div class="sim-number">0933.329.466</div>
-                    <div class="sim-price">500.000đ</div>
+                <div class="sim-item">
+                    <div class="item-number">0931.219.488</div>
+                    <div class="item-price">800.000đ</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: rgba(255,255,255,0.02);">
+    <!-- Standard Range -->
+    <section class="section-padding">
         <div class="container">
-            <div class="section-header">
-                <h2>SIM ĐỒNG GIÁ 800K</h2>
-                <p>Lựa chọn tinh tế cho sự nghiệp vững bền.</p>
+            <div class="section-title">
+                <span>Value Series</span>
+                <h2>SIM TÀI LỘC 500K</h2>
             </div>
             <div class="sim-grid">
-                <div class="sim-card">
-                    <div class="sim-number">0931.289.488</div>
-                    <div class="sim-price">800.000đ</div>
+                <div class="sim-item">
+                    <div class="item-number">0933.975.066</div>
+                    <div class="item-price">500.000đ</div>
                 </div>
-                <div class="sim-card">
-                    <div class="sim-number">0931.293.488</div>
-                    <div class="sim-price">800.000đ</div>
+                <div class="sim-item">
+                    <div class="item-number">0933.985.066</div>
+                    <div class="item-price">500.000đ</div>
                 </div>
-                <div class="sim-card">
-                    <div class="sim-number">0931.539.488</div>
-                    <div class="sim-price">800.000đ</div>
+                <div class="sim-item">
+                    <div class="item-number">0933.081.566</div>
+                    <div class="item-price">500.000đ</div>
                 </div>
-                <div class="sim-card">
-                    <div class="sim-number">0931.219.488</div>
-                    <div class="sim-price">800.000đ</div>
-                </div>
-                <div class="sim-card">
-                    <div class="sim-number">0931.246.488</div>
-                    <div class="sim-price">800.000đ</div>
-                </div>
-                <div class="sim-card">
-                    <div class="sim-number">0931.247.488</div>
-                    <div class="sim-price">800.000đ</div>
-                </div>
-                <div class="sim-card">
-                    <div class="sim-number">0931.542.599</div>
-                    <div class="sim-price">800.000đ</div>
-                </div>
-                <div class="sim-card">
-                    <div class="sim-number">0931.245.399</div>
-                    <div class="sim-price">800.000đ</div>
+                <div class="sim-item">
+                    <div class="item-number">0937.712.066</div>
+                    <div class="item-price">500.000đ</div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Floating Actions -->
+    <div class="float-group">
+        <a href="https://www.facebook.com/share/1CyMuSinCf/?mibextid=wwXlfr" target="_blank" class="float-btn f-fb">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://zalo.me/0777311999" target="_blank" class="float-btn f-zalo">
+            <i class="fas fa-comment"></i>
+        </a>
+        <a href="tel:0523321999" class="float-btn f-phone">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h3>THUYẾT SIM VIP</h3>
-                <p>Nơi trao gửi niềm tin qua từng con số. Chúng tôi tự hào là đơn vị cung cấp sim số đẹp uy tín nhất với
-                    dịch vụ tận tâm và chuyên nghiệp.</p>
-                <div class="contact-info">
-                    <div class="contact-item"><i class="fas fa-user"></i> Trần Minh Thuyết</div>
-                    <div class="contact-item"><i class="fas fa-phone-alt"></i> 05.2332.1999 / 0777.3.1.1999</div>
-                    <div class="contact-item"><i class="fas fa-university"></i> MBank: 0777.3.1.1999</div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>THUYẾT SIM VIP</h3>
+                    <p>Đơn vị cung cấp sim số đẹp phong thủy hàng đầu Việt Nam. Nơi khẳng định đẳng cấp và giá trị thực
+                        tế của khách hàng qua từng con số.</p>
+                    <div class="contact-pill"><i class="fas fa-user"></i> Trần Minh Thuyết</div>
+                    <div class="contact-pill"><i class="fas fa-phone-alt"></i> 05.2332.1999 / 0777.3.1.1999</div>
+                    <div class="contact-pill"><i class="fas fa-university"></i> MBank: 0777.3.1.1999</div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Về Chúng Tôi</h4>
+                    <ul>
+                        <li><a href="gioi-thieu.html">Câu Chuyện Thương Hiệu</a></li>
+                        <li><a href="phong-thuy.html">Ý Nghĩa Các Con Số</a></li>
+                        <li><a href="lien-he.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Sản Phẩm</h4>
+                    <ul>
+                        <li><a href="#danh-sach">Sim VIP Đẳng Cấp</a></li>
+                        <li><a href="#">Sim Tài Lộc 800K</a></li>
+                        <li><a href="#">Sim Khởi Nghiệp 500K</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Kết Nối</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/share/1CyMuSinCf">Facebook</a></li>
+                        <li><a href="https://zalo.me/0777311999">Zalo Chat</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="footer-links">
-                <h4>Khám Phá</h4>
-                <ul>
-                    <li><a href="#danh-sach">Sim VIP</a></li>
-                    <li><a href="#">Sim Đồng Giá 500K</a></li>
-                    <li><a href="#">Sim Đồng Giá 800K</a></li>
-                    <li><a href="#">Sim Phong Thủy</a></li>
-                </ul>
+            <div class="footer-bottom">
+                &copy; 2026 Thuyết Sim VIP. Design with elegance and prestige.
             </div>
-
-            <div class="footer-links">
-                <h4>Hỗ Trợ</h4>
-                <ul>
-                    <li><a href="#">Thanh Toán</a></li>
-                    <li><a href="#">Vận Chuyển</a></li>
-                    <li><a href="#">Hợp Tác</a></li>
-                    <li><a href="https://www.facebook.com/share/1CyMuSinCf/?mibextid=wwXlfr">Facebook Fanpage</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="copyright">
-            &copy; 2026 Thuyết Sim VIP. Design with elegance and prestige.
         </div>
     </footer>
 
     <script>
-        // Smooth interaction
-        document.querySelectorAll('.sim-card').forEach(card => {
+        // Navbar scrolled effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Sim card auto-order on Zalo
+        document.querySelectorAll('.sim-item').forEach(card => {
             card.addEventListener('click', () => {
-                const number = card.querySelector('.sim-number').innerText;
-                const price = card.querySelector('.sim-price').innerText;
+                const number = card.querySelector('.item-number').innerText;
+                const price = card.querySelector('.item-price').innerText;
                 const message = `Chào anh Thuyết, em muốn sở hữu sim VIP ${number} giá ${price}. Tư vấn sớm giúp em nhé!`;
                 window.open(`https://zalo.me/0777311999?text=${encodeURIComponent(message)}`, '_blank');
             });
         });
 
-        // Scroll Reveal Animation (Simple version)
-        const observerOptions = {
-            threshold: 0.1
-        };
-
+        // Intersection Observer for scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -709,9 +239,9 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.section-header, .sim-card').forEach(el => {
+        document.querySelectorAll('.sim-item, .section-title, .content-block').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.8s ease-out';

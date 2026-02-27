@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - THUYẾT SIM VIP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid var(--border-glass);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            color: #fff;
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-method {
+            margin-bottom: 40px;
+        }
+
+        .contact-method i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-method h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-method p {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Thuyết Sim VIP</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+                <li><a href="index.html#danh-sach">Bộ Sưu Tập</a></li>
+                <li><a href="phong-thuy.html">Sim Phong Thủy</a></li>
+                <li><a href="lien-he.html" class="active">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="inner-header">
+        <div class="container">
+            <span>Get in Touch</span>
+            <h1>Kết Nối Với Chúng Tôi</h1>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-wrap">
+                    <div class="contact-method">
+                        <i class="fas fa-phone-alt"></i>
+                        <h4>Hotline Phục Vụ 24/7</h4>
+                        <p>05.2332.1999</p>
+                        <p>0777.3.1.1999</p>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-university"></i>
+                        <h4>Thông Tin Thanh Toán</h4>
+                        <p>MBank (Ngân hàng Quân đội)</p>
+                        <p>Số tài khoản: 0777.3.1.1999</p>
+                        <p>Chủ tài khoản: Trần Minh Thuyết</p>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fab fa-facebook"></i>
+                        <h4>Mạng Xã Hội</h4>
+                        <p><a href="https://www.facebook.com/share/1CyMuSinCf">Ghé thăm Fanpage của chúng tôi</a></p>
+                    </div>
+                    <img src="contact.png" alt="Luxury Lounge"
+                        style="width: 100%; border-radius: 20px; margin-top: 30px;">
+                </div>
+
+                <div class="contact-form">
+                    <div class="section-title" style="text-align: left; margin-bottom: 40px;">
+                        <span>Inquiry</span>
+                        <h2 style="font-size: 2.5rem;">Gửi Yêu Cầu Tư Vấn</h2>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label>Họ và Tên</label>
+                            <input type="text" placeholder="Nhập tên của bạn...">
+                        </div>
+                        <div class="form-group">
+                            <label>Số Điện Thoại</label>
+                            <input type="text" placeholder="Nhập số điện thoại...">
+                        </div>
+                        <div class="form-group">
+                            <label>Dòng Sim Quan Tâm</label>
+                            <input type="text" placeholder="Ví dụ: Sim Tứ Quý, Sim Lộc Phát...">
+                        </div>
+                        <div class="form-group">
+                            <label>Lời Nhắn</label>
+                            <textarea rows="5" placeholder="Bạn cần chúng tôi hỗ trợ gì thêm không?"></textarea>
+                        </div>
+                        <button type="button" class="btn-premium btn-primary"
+                            style="width: 100%; justify-content: center;">
+                            Gửi Ngay <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 Thuyết Sim VIP. Design with elegance and prestige.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('button').addEventListener('click', () => {
+            alert('Cảm ơn bạn! Yêu cầu của bạn đã được gửi. Chúng tôi sẽ liên hệ lại sớm nhất.');
+        });
+    </script>
+</body>
+
+</html>
