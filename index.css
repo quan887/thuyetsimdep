@@ -144,6 +144,10 @@ a {
     width: 100%;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 /* Hero Section Enhancement */
 .hero {
     height: 100vh;
@@ -547,7 +551,7 @@ footer {
     }
 }
 
-/* Responsive */
+/* Responsive & Mobile Menu */
 @media (max-width: 1200px) {
     .container {
         padding: 0 30px;
@@ -559,13 +563,54 @@ footer {
 }
 
 @media (max-width: 991px) {
-    .navbar .nav-links {
-        display: none;
+    .navbar {
+        padding: 15px 0;
+        background: rgba(5, 5, 5, 0.95);
+        backdrop-filter: blur(10px);
     }
 
-    /* Mobile menu simplified for now */
+    .nav-container {
+        padding: 0 25px;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        font-size: 1.5rem;
+        color: var(--gold);
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: #0a0a0a;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px !important;
+        transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        z-index: 1000;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
     .hero h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
     }
 
     .footer-grid {
@@ -574,15 +619,84 @@ footer {
 
     .content-block {
         flex-direction: column;
+        gap: 40px;
     }
 }
 
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
+    }
+
+    .section-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .sim-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .sim-item {
+        padding: 40px 25px;
+    }
+
+    .item-number {
+        font-size: 1.8rem;
     }
 
     .footer-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .float-group {
+        bottom: 25px;
+        right: 20px;
+        gap: 10px;
+    }
+
+    .float-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .badge {
+        font-size: 0.7rem;
+        padding: 6px 16px;
+        letter-spacing: 2px;
+    }
+
+    .btn-premium {
+        padding: 15px 30px;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .filter-group {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 10px;
+    }
+
+    .search-input {
+        width: 100% !important;
     }
 }
