@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kho Sim Đẳng Cấp - Thuyết Sim Đẹp</title>
+    <meta name="description"
+        content="Khám phá kho sim số đẹp, sim phong thủy, sim tài lộc đẳng cấp tại Thuyết Sim Đẹp. Cập nhật liên tục từ Google Sheets.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        .loading-overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--border-glass);
+            border-top: 3px solid var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .filter-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 50px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .search-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            padding: 12px 25px;
+            border-radius: 12px;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            width: 300px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .sim-empty {
+            text-align: center;
+            padding: 100px 0;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            grid-column: 1 / -1;
+        }
+
+        .operator-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .op-viettel {
+            background: #ed1c24;
+            color: white;
+        }
+
+        .op-mobifone {
+            background: #0054a6;
+            color: white;
+        }
+
+        .op-vinaphone {
+            background: #00aef1;
+            color: white;
+        }
+
+        .op-vietnammobile {
+            background: #ff6600;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Thuyết Sim Đẹp</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="khosim.html" class="active">Kho Sim</a></li>
+                <li><a href="phong-thuy.html">Phong Thủy</a></li>
+                <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+                <li><a href="lien-he.html">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="inner-header">
+        <div class="container" style="animation: fadeInDown 1s ease;">
+            <span class="badge" style="margin-bottom: 20px;">Kho Sim Số Đẹp</span>
+            <h1>KHO SIM ĐẲNG CẤP</h1>
+            <p>Hệ thống sim số được cập nhật trực tiếp từ Google Sheets, đảm bảo tính mới và minh bạch.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="section-padding">
+        <div class="container">
+            <!-- Search & Filter -->
+            <div class="filter-wrapper">
+                <div class="filter-group">
+                    <span class="filter-label"><i class="fas fa-search"></i> Tìm kiếm:</span>
+                    <input type="text" id="simSearch" class="search-input"
+                        placeholder="Nhập đuôi sim hoặc số bạn muốn..." onkeyup="filterSims()">
+                </div>
+            </div>
+
+            <!-- Sim Grid -->
+            <div id="simContainer" class="sim-grid">
+                <div class="loading-overlay">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>Thuyết Sim Đẹp</h3>
+                    <p>Chuyên cung cấp các dòng sim số đẹp, sim phong thủy, sim doanh nhân mang lại tài lộc và đẳng cấp
+                        cho chủ sở hữu.</p>
+                    <div class="contact-pill"><i class="fas fa-phone"></i> 0909.88.99.99</div>
+                    <div class="contact-pill"><i class="fas fa-location-dot"></i> 123 Luxury Street, TP. Hồ Chí Minh
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Về Chúng Tôi</h4>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+                        <li><a href="lien-he.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Kho Sim</h4>
+                    <ul>
+                        <li><a href="khosim.html">Sim Lục Quý</a></li>
+                        <li><a href="khosim.html">Sim Ngũ Quý</a></li>
+                        <li><a href="khosim.html">Sim Thần Tài</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hỗ Trợ</h4>
+                    <ul>
+                        <li><a href="#">Tư vấn phong thủy</a></li>
+                        <li><a href="#">Đăng ký chính chủ</a></li>
+                        <li><a href="#">Giao hàng tận nơi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Thuyết Sim Đẹp. All Rights Reserved. Luxury Digital Experience.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const CSV_URL = `https://docs.google.com/spreadsheets/d/e/2PACX-1vSz0kvc241GGbGtijgbLbnwiUPQHn68jvdWTQHxBFoq1cYKibJoyz_9PGiQm1aQsGcwPb9-9O8Sf0yj/pub?output=csv`;
+
+        let allSims = [];
+
+        async function fetchSimData() {
+            const container = document.getElementById('simContainer');
+            try {
+                const response = await fetch(CSV_URL);
+                if (!response.ok) throw new Error('Không thể tải dữ liệu từ Google Sheet');
+                const data = await response.text();
+
+                // Tách dòng, lọc bỏ các dòng trống
+                const rows = data.split(/\r?\n/).filter(row => row.trim() !== '');
+
+                if (rows.length <= 1) {
+                    container.innerHTML = '<div class="sim-empty">Kho sim đang được cập nhật, vui lòng quay lại sau.</div>';
+                    return;
+                }
+
+                allSims = rows.slice(1).map(row => {
+                    const columns = row.split(',').map(col => col.replace(/"/g, '').trim());
+
+                    // Format lại số điện thoại (thêm số 0 nếu thiếu)
+                    let num = columns[0] || '';
+                    if (num && num.length === 9 && !num.startsWith('0')) num = '0' + num;
+
+                    // Format lại giá tiền (thêm chữ đ và dấu chấm phân cách)
+                    let prc = columns[1] || 'Liên hệ';
+                    if (!isNaN(prc) && prc !== '') {
+                        prc = parseInt(prc).toLocaleString('vi-VN') + 'đ';
+                    }
+
+                    return {
+                        number: num,
+                        price: prc,
+                        tag: columns[2] || 'VIP',
+                        operator: columns[3] || 'Khác'
+                    };
+                }).filter(sim => sim.number !== '');
+
+                renderSims(allSims);
+            } catch (error) {
+                console.error('Error:', error);
+                container.innerHTML = `
+                    <div class="sim-empty">
+                        <i class="fas fa-wifi-slash" style="font-size: 3rem; color: var(--gold); margin-bottom: 20px;"></i>
+                        <p>Kết nối không ổn định hoặc lỗi định dạng Sheet.</p>
+                        <button onclick="location.reload()" class="btn-premium btn-secondary" style="margin-top:20px; padding:10px 20px;">Thử lại</button>
+                    </div>
+                `;
+            }
+        }
+
+        function renderSims(sims) {
+            const container = document.getElementById('simContainer');
+            if (sims.length === 0) {
+                container.innerHTML = '<div class="sim-empty">Không tìm thấy sim phù hợp.</div>';
+                return;
+            }
+
+            container.innerHTML = sims.map(sim => `
+                <div class="sim-item">
+                    <span class="item-tag">${sim.tag}</span>
+                    <div class="item-icon">
+                        <span class="operator-badge op-${sim.operator.toLowerCase()}">${sim.operator}</span>
+                    </div>
+                    <div class="item-number">${sim.number}</div>
+                    <div class="item-price">${sim.price}</div>
+                    <div style="margin-top: 25px;">
+                        <a href="https://zalo.me/0909889999" target="_blank" class="btn-premium btn-primary" style="padding: 12px 25px; font-size: 0.9rem; width: 100%; justify-content: center;">
+                            MUA NGAY <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterSims() {
+            const searchTerm = document.getElementById('simSearch').value.toLowerCase();
+            const filtered = allSims.filter(sim =>
+                sim.number.toLowerCase().includes(searchTerm) ||
+                sim.tag.toLowerCase().includes(searchTerm) ||
+                sim.operator.toLowerCase().includes(searchTerm)
+            );
+            renderSims(filtered);
+        }
+
+        // Initialize
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Load data on start
+        fetchSimData();
+    </script>
+</body>
+
+</html>
